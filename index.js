@@ -5,7 +5,7 @@ const client = createClient({
   port: 19132,
   username: 'BotAFK',
   offline: true,
-  version:'1.21.130',
+  version: '1.26.63.1',
 })
 
 client.on('join', () => {
