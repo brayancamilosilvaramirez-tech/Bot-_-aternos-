@@ -5,10 +5,12 @@ const client = createClient({
   port: 19132,
   username: 'BotAFK',
   offline: true,
-  version:'1.26.60',
+  version: '1.26.60',
+  skipPing: true,
+  connectTimeout: 10000
 })
 
-client.on('join', () => {
+client.on('spawn', () => {
   console.log('Bot conectado!')
   setInterval(() => {
     client.write('player_auth_input', {
@@ -24,7 +26,7 @@ client.on('join', () => {
       gaze_direction: undefined,
       tick: 0n,
       delta: { x: 0, y: 0, z: 0 },
-      transaction: { type: 'normal', data: { action_type: 'normal', actions: [] } },
+      transaction: { type: 'normal', data: { type: 'normal' } },
       item_interaction_attempt: null,
       item_interaction_with_block: 0,
       block_action: []
